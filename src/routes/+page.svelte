@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { enhance } from '$app/forms';
+    
     export let form;
 </script>
 
@@ -35,7 +37,7 @@
 
 {#if form?.success}
 <div class="rounded-md bg-green-50 p-4">
-    <div class="flex">
+    <div class="flex place-content-center">
       <div class="flex-shrink-0">
         <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
@@ -63,13 +65,13 @@
   </div>
   
 {:else}
-    <form method="POST">
+    <form method="POST" use:enhance>
         <div class="flex flex-col space-y-12">
-            <div class="border-b border-gray-900/10 pb-12">
+            <div class="border-b border-gray-900/10 pb-12 m-8">
                 <div
-                    class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 place-content-end"
+                    class="mt-10 flex place-content-center"
                 >
-                    <div class="border-b border-gray-900/10 pb-12">
+                    <div class="">
                         <h2
                             class="text-base font-semibold leading-7 text-gray-900"
                         >
@@ -80,7 +82,7 @@
                         </p>
 
                         <div
-                            class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6"
+                            class="mt-5 flex flex-col"
                         >
                             <div class="sm:col-span-3">
                                 <label
@@ -92,7 +94,8 @@
                                     <textarea
                                         name="message"
                                         id="message"
-                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        class="block w-full min-h-52 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required
                                     />
                                 </div>
                             </div>
@@ -107,7 +110,8 @@
                                     <textarea
                                         name="receipent-public-key"
                                         id="receipent-public-key"
-                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        class="block w-full min-h-52 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required
                                     />
                                 </div>
                             </div>
@@ -115,11 +119,6 @@
                     </div>
                 </div>
                 <div class="mt-6 flex items-center justify-end gap-x-6">
-                    <button
-                        type="button"
-                        class="text-sm font-semibold leading-6 text-gray-900"
-                        >Cancel</button
-                    >
                     <button
                         type="submit"
                         class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"

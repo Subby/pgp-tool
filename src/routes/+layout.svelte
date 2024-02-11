@@ -16,7 +16,7 @@
       <nav class="hidden md:flex md:gap-x-11 md:text-sm md:font-semibold md:leading-6 md:text-gray-700">
         <a href="/">Home</a>
         <a href="/encrypt">Encrypt</a>
-        <a href="/decrypt">Invoices</a>
+        <a href="/decrypt">Decrypt</a>
       </nav>
       <div class="flex flex-1 items-center justify-end gap-x-8">
         <button type="button" class="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">

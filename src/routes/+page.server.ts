@@ -29,7 +29,7 @@ export const actions = {
             }
         } catch (e) {
             console.log("Error occured: " + e)
-            fail(400, { errorMessage: "Error encrypting your message" });
+            return fail(400, { errorMessage: "Error encrypting your message" });
         }
         
     },
