@@ -1,6 +1,6 @@
 # PGP Tool
 
-A web based tool to encrypt and decrypt PGP messages. Powered by [`Sveltekit`]https://kit.svelte.dev/).
+A web based tool to encrypt and decrypt PGP messages. Powered by [`Sveltekit`](https://kit.svelte.dev/).
 
 ## Developing
 
